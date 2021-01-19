@@ -10,16 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_18_201516) do
+ActiveRecord::Schema.define(version: 2021_01_19_195651) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "attributes", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.integer "skill_level"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "characters", force: :cascade do |t|
+    t.string "character_name"
+    t.string "password_hash"
+    t.string "email"
+    t.string "background"
+    t.string "heritage"
+    t.string "vice"
+    t.integer "stress"
+    t.integer "level"
+    t.integer "experience_tracker"
+    t.integer "current_harm"
+    t.bigint "class_type_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["class_type_id"], name: "index_characters_on_class_type_id"
+  end
 
   create_table "class_abilities", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.bigint "class_type_id"
     t.integer "cost"
+    t.integer "level_requirement"
     t.index ["class_type_id"], name: "index_class_abilities_on_class_type_id"
   end
 
@@ -40,5 +66,6 @@ ActiveRecord::Schema.define(version: 2021_01_18_201516) do
     t.string "image"
   end
 
+  add_foreign_key "characters", "class_types"
   add_foreign_key "class_abilities", "class_types"
 end

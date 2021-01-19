@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :attributes
+  resources :characters
   resources :class_abilities
   resources :class_types
   resources :equipment
