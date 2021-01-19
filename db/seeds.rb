@@ -33,113 +33,134 @@
     ClassAbility.create(
         name: "kinetics", 
         description: "You can push yourself to throw a table-sized object or propel yourself with super speed.",
-        class_type_id: 1
+        class_type_id: 1,
+        level_requirement: 1
     )
     ClassAbility.create(
         name: "psyblade",
         description: "Its definitely not a lightsaber (it is).",
-        class_type_id: 1
+        class_type_id: 1,
+        level_requirement: 1
     )
     ClassAbility.create(
         name: "way shield",
         description: "Blocks Projectiles",
-        class_type_id: 1
+        class_type_id: 1,
+        level_requirement: 2
     )
     # pilot
     ClassAbility.create(
         name: "keen eye",
         description: "You have sharp eyes and notice small details many might overlook. Gain +1 when firign ship guns or making trick shots.",
-        class_type_id: 2
+        class_type_id: 2,
+        level_requirement: 1
     )
     ClassAbility.create(
         name: "exceed specs",
         description: "You may choose to damage a ship system that you have access to in order to gain +1 to a roll.",
-        class_type_id: 2
+        class_type_id: 2,
+        level_requirement: 1
     )
     ClassAbility.create(
         name: "punch it",
         description: "When you spend a gambit on a desperate roll, it counts as risky instead.",
-        class_type_id: 2
+        class_type_id: 2,
+        level_requirement: 2
     )
     # scoundrel
     ClassAbility.create(
         name: "never tell me the odds",
         description: "You generate gambits on desperate rolls. You may also generate a gambit even if you spent a gambit.",
-        class_type_id: 3
+        class_type_id: 3,
+        level_requirement: 1
     )
     ClassAbility.create(
         name: "tenacious",
         description: "Penalties from harm are one level less severe (though level 4 harm is still fatal).",
-        class_type_id: 3
+        class_type_id: 3,
+        level_requirement: 1
     )
     ClassAbility.create(
         name: "devil's own luck",
         description: "You may expend your special armor to resist the consequences of blaster fire.",
-        class_type_id: 3
+        class_type_id: 3,
+        level_requirement: 2
     )
     #mechanic
     ClassAbility.create(
         name: "construct whisperer",
         description: "Machiens speak to you when you study them. The first time you roll a critical while fixing or building a particular machien you may add a simple modification.",
-        class_type_id: 4
+        class_type_id: 4,
+        level_requirement: 1
     )
     ClassAbility.create(
         name: "hacker",
         description: "You may expend your special armor to resist the consequences of hacking.",
-        class_type_id: 4
+        class_type_id: 4,
+        level_requirement: 1
     )
     ClassAbility.create(
         name: "overclock",
         description: "When you spend a gambit on a rig roll to repair or upgrade, treat the system you worked on as 1 quality higher for the remainder of the job.",
-        class_type_id: 4
+        class_type_id: 4,
+        level_requirement: 2
     )
     #muscle
     ClassAbility.create(
         name: "wrecking crew",
         description: "Your strength and ferocity are infamous. When striking in melee, you gain +1. If you spend a gambit on this attack gain another +1.",
-        class_type_id: 5
+        class_type_id: 5,
+        level_requirement: 1
     )
     ClassAbility.create(
         name: "battleborn",
         description: "You may expend your special armor to reduce harm from an attack in combat, or to push yourself during a fight.",
-        class_type_id: 5
+        class_type_id: 5,
+        level_requirement: 1
     )
     ClassAbility.create(
         name: "ready for anything",
         description: "When being ambushed, you gain potency to all actions during a flashback, and your first flashback costs 0 stress.",
-        class_type_id: 5
+        class_type_id: 5,
+        level_requirement: 2
     )
     #speaker
     ClassAbility.create(
         name: "favors owed",
         description: "During downtime, you get +1 when you acquire assets or lay low. Any time you gather info, take +1.",
-        class_type_id: 6
+        class_type_id: 6,
+        level_requirement: 1
     )
     ClassAbility.create(
         name: "infiltrator",
         description: "You are not affected by quality or Tier when you bypass security measures.",
-        class_type_id: 6
+        class_type_id: 6,
+        level_requirement: 1
     )
     ClassAbility.create(
         name: "old friends",
         description: "Whenever you land in a new location, write down a friend you know there.",
-        class_type_id: 6
+        class_type_id: 6,
+        level_requirement: 2
     )
     #stitch
     ClassAbility.create(
         name: "physicker",
         description: "You may study a malady, wounds, or corpse, and gather info from a crime scene. Also, your crew gets +1 to recovery rolls.",
-        class_type_id: 7
+        class_type_id: 7,
+        level_requirement: 1
     )
     ClassAbility.create(
         name: "under pressure",
         description: "Add a gambit to the pool whenever you or a crew member suffers level 2 or greater harm.",
-        class_type_id: 7
+        class_type_id: 7,
+        level_requirement: 1
     )
     ClassAbility.create(
         name: "book learning",
         description: "You speak a multitude of languages and are broadly educated. Gain +1 when using study during a downtime activity.",
-        class_type_id: 7
+        class_type_id: 7,
+        level_requirement: 2
     )
 
 #equipment 
@@ -290,5 +311,56 @@
         cost: 1,
         proficiency: "stitch",
         image: "coming soon",
+    )
+
+# attributes
+
+    Attribute.create(
+        name: "attune",
+        description: "attune to the Way to communicate with non-sentient species or robots; sense unseen danger or killing intent; safely handle Precursor artifacts or remnants",
+    )
+    Attribute.create(
+        name: "command",
+        description: "command obedience with your force of personality; intimidate or threaten; lead an action with NPCs; order people to do what you want",
+    )
+    Attribute.create(
+        name: "consort",
+        description: "consort with connections from your heritage, background, friends, or rivals to gain access to resources, information, people, or places",
+    )
+    Attribute.create(
+        name: "doctor",
+        description: "doctor someone who’s been injured; handle and identify substances; do science; comfort, support, or elicit sympathy",
+    )
+    Attribute.create(
+        name: "hack",
+        description: "hack computers, systems, and digital locks; reprogram robots or drones; jam surveillance and communications",
+    )
+    Attribute.create(
+        name: "helm",
+        description: "helm a vehicle; fire ship weaponry; plot a jump or in-system course; escape a chasing ship",
+    )
+    Attribute.create(
+        name: "rig",
+        description: "rig together mechanical solutions; disable, modify, repair, or create mechanisms; disable a trap, pick a lock, or crack a safe; rig explosives",
+    )
+    Attribute.create(
+        name: "scramble",
+        description: "scramble to a position or away from danger; lift, run, climb, jump, or swim; traverse harsh environments",
+    )
+    Attribute.create(
+        name: "scrap",
+        description: "scrap with an opponent in blaster or physical combat; assault or hold a position; brawl, fight with melee weapons, or wrestle",
+    )
+    Attribute.create(
+        name: "skulk",
+        description: "skulk about unseen; pick pockets; employ subtle misdirection or sleight of hand",
+    )
+    Attribute.create(
+        name: "study",
+        description: "study a person, document, or item with close scrutiny to gather information and apply knowledge; gain a deeper understanding; do research",
+    )
+    Attribute.create(
+        name: "sway",
+        description: "sway someone with charm, logic, decption, disguise, or bluffing; change atitudes or behavior with manipulation or seduction.",
     )
 
