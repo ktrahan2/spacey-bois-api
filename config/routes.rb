@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :prompt_options
+  resources :prompts
   resources :attributes
   resources :characters
   resources :class_abilities

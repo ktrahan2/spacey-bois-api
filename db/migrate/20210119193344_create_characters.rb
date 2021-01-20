@@ -12,8 +12,7 @@ class CreateCharacters < ActiveRecord::Migration[6.1]
       t.integer :experience_tracker
       t.integer :current_harm
       t.references :class_type, foreign_key: true
-      #add reference to attributes      
-      #add reference to a contact
+      
       t.timestamps
     end
   end
