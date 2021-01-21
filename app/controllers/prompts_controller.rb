@@ -6,10 +6,10 @@ class PromptsController < ApplicationController
         render json: @prompts
     end
 
-    def show 
-        @prompt = Prompt.find(params[:id])
-
+    def findByPromptNumber
+        @prompt = Prompt.where(prompt_number: params[:prompt_number]).first 
+        
         render json: @prompt
     end
-    
+
 end
