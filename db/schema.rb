@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_20_203255) do
+ActiveRecord::Schema.define(version: 2021_01_21_201140) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -83,7 +83,18 @@ ActiveRecord::Schema.define(version: 2021_01_20_203255) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "starting_equipments", force: :cascade do |t|
+    t.bigint "class_type_id"
+    t.bigint "equipment_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["class_type_id"], name: "index_starting_equipments_on_class_type_id"
+    t.index ["equipment_id"], name: "index_starting_equipments_on_equipment_id"
+  end
+
   add_foreign_key "characters", "class_types"
   add_foreign_key "class_abilities", "class_types"
   add_foreign_key "prompt_options", "prompts"
+  add_foreign_key "starting_equipments", "class_types"
+  add_foreign_key "starting_equipments", "equipment"
 end

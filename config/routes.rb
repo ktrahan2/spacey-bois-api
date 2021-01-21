@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :starting_equipments
   resources :prompt_options
   resources :prompts, only: [:index]
   resources :attributes
