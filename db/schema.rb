@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_21_201140) do
+ActiveRecord::Schema.define(version: 2021_02_03_181700) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,9 +23,6 @@ ActiveRecord::Schema.define(version: 2021_01_21_201140) do
   end
 
   create_table "characters", force: :cascade do |t|
-    t.string "character_name"
-    t.string "password_hash"
-    t.string "email"
     t.string "background"
     t.string "heritage"
     t.string "vice"
@@ -36,7 +33,9 @@ ActiveRecord::Schema.define(version: 2021_01_21_201140) do
     t.bigint "class_type_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id"
     t.index ["class_type_id"], name: "index_characters_on_class_type_id"
+    t.index ["user_id"], name: "index_characters_on_user_id"
   end
 
   create_table "class_abilities", force: :cascade do |t|
@@ -92,7 +91,16 @@ ActiveRecord::Schema.define(version: 2021_01_21_201140) do
     t.index ["equipment_id"], name: "index_starting_equipments_on_equipment_id"
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "email"
+    t.string "password_digest"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   add_foreign_key "characters", "class_types"
+  add_foreign_key "characters", "users"
   add_foreign_key "class_abilities", "class_types"
   add_foreign_key "prompt_options", "prompts"
   add_foreign_key "starting_equipments", "class_types"
