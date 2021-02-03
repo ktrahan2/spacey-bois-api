@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :character_attributes
   resources :vices, only: [:index, :show, :create]
   resources :backgrounds, only: [:index, :show, :create]
   # resources :character_heritages

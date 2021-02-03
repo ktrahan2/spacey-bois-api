@@ -8,6 +8,7 @@ class CharactersController < ApplicationController
         @character = Character.find(params[:id])
     end
 
+    #this is currently not working? wont save
     def create 
         @character = Character.create(character_params)
         
