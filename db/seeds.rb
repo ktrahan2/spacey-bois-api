@@ -556,3 +556,40 @@
     #     description: "Part of an organized criminal gang, from the lowest
     #     lookout to ousted former crime lord."
     # )
+
+#vices
+    Vice.create(
+        title: "Faith",
+        description: "You’re part of a Cult, or observe specific ceremonies at
+        regular intervals."
+    )
+    Vice.create(
+        title: "Gambling",
+        description: "You crave games of chance, or bet on sporting events,
+        etc."
+    )
+    Vice.create(
+        title: "Luxury",
+        description: "You seek the high life with expensive, ostentatious displays
+        of wealth."
+    )
+    Vice.create(
+        title: "Obligation",
+        description: "You’re devoted to a family, cause, organization, charity,
+        etc."
+    )
+    Vice.create(
+        title: "Pleasure",
+        description: "You seek hedonistic gratification from lovers, food,
+        drink, drugs, art, etc."
+    )
+    Vice.create(
+        title: "Stupor",
+        description: "You dull the senses with drug abuse, excessive drinking,
+        fighting to exhaustion, etc"
+    )
+    Vice.create(
+        title: "Weird",
+        description: "You perform strange experiments, explore the Way,
+        commune with Ur artifacts, and so on."
+    )

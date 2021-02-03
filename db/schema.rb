@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_03_210230) do
+ActiveRecord::Schema.define(version: 2021_02_03_212522) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,7 +39,6 @@ ActiveRecord::Schema.define(version: 2021_02_03_210230) do
   end
 
   create_table "characters", force: :cascade do |t|
-    t.string "vice"
     t.integer "stress"
     t.integer "level"
     t.integer "experience_tracker"
@@ -50,9 +49,11 @@ ActiveRecord::Schema.define(version: 2021_02_03_210230) do
     t.bigint "user_id"
     t.string "name"
     t.bigint "background_id"
+    t.bigint "vice_id"
     t.index ["background_id"], name: "index_characters_on_background_id"
     t.index ["class_type_id"], name: "index_characters_on_class_type_id"
     t.index ["user_id"], name: "index_characters_on_user_id"
+    t.index ["vice_id"], name: "index_characters_on_vice_id"
   end
 
   create_table "class_abilities", force: :cascade do |t|
@@ -123,9 +124,17 @@ ActiveRecord::Schema.define(version: 2021_02_03_210230) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "vices", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   add_foreign_key "characters", "backgrounds"
   add_foreign_key "characters", "class_types"
   add_foreign_key "characters", "users"
+  add_foreign_key "characters", "vices"
   add_foreign_key "class_abilities", "class_types"
   add_foreign_key "prompt_options", "prompts"
   add_foreign_key "starting_equipments", "class_types"

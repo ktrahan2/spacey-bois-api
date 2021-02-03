@@ -11,5 +11,17 @@ class BackgroundsController < ApplicationController
 
         render json: @background
     end
-    
+
+    def create
+        @background = Background.create(background_params)
+
+        render json: @background
+    end
+
+    private
+
+    def background_params
+        params.require(:background).permit(:title, :description)
+    end
+
 end
