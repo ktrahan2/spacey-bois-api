@@ -1,0 +1,2 @@
+class CharacterHeritagesController < ApplicationController
+end

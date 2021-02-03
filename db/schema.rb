@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_03_181700) do
+ActiveRecord::Schema.define(version: 2021_02_03_210230) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,9 +22,23 @@ ActiveRecord::Schema.define(version: 2021_02_03_181700) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "backgrounds", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "character_heritages", force: :cascade do |t|
+    t.bigint "character_id"
+    t.bigint "heritage_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["character_id"], name: "index_character_heritages_on_character_id"
+    t.index ["heritage_id"], name: "index_character_heritages_on_heritage_id"
+  end
+
   create_table "characters", force: :cascade do |t|
-    t.string "background"
-    t.string "heritage"
     t.string "vice"
     t.integer "stress"
     t.integer "level"
@@ -34,6 +48,9 @@ ActiveRecord::Schema.define(version: 2021_02_03_181700) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"
+    t.string "name"
+    t.bigint "background_id"
+    t.index ["background_id"], name: "index_characters_on_background_id"
     t.index ["class_type_id"], name: "index_characters_on_class_type_id"
     t.index ["user_id"], name: "index_characters_on_user_id"
   end
@@ -61,6 +78,13 @@ ActiveRecord::Schema.define(version: 2021_02_03_181700) do
     t.float "cost"
     t.string "proficiency"
     t.string "image"
+  end
+
+  create_table "heritages", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "prompt_options", force: :cascade do |t|
@@ -99,6 +123,7 @@ ActiveRecord::Schema.define(version: 2021_02_03_181700) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "characters", "backgrounds"
   add_foreign_key "characters", "class_types"
   add_foreign_key "characters", "users"
   add_foreign_key "class_abilities", "class_types"
