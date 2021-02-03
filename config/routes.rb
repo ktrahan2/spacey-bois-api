@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  resources :vices
-  resources :backgrounds, only: [:index, :show]
+  resources :vices, only: [:index, :show, :create]
+  resources :backgrounds, only: [:index, :show, :create]
   # resources :character_heritages
-  resources :heritages, only: [:index, :show]
+  resources :heritages, only: [:index, :show, :create]
   resources :users
   post '/login', to: 'users#login'
   resources :starting_equipments, only: [:index, :show]
