@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   resources :class_types
   resources :equipment
   get '/prompts/:prompt_number', to: 'prompts#findByPromptNumber'
+  post "/login", to: 'users#login'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
-   
+
+    skip_before_action :authorized, only: [:create, :login]
+    
     def index
         @users = User.all
 
@@ -14,18 +16,24 @@ class UsersController < ApplicationController
 
     def create
         @user = User.new(user_params)
-        # binding.pry
         if @user.valid?
             @user.save
-            # @token = JWT.encode({user_id: @user.id}, Rails.application.secrets.secret_key_base[0])
-            render json: {user: @user}
+            @token = JWT.encode({user_id: @user.id}, Rails.application.secrets.secret_key_base[0])
+            render json: {user: @user, token: @token}
         else
             render json: {errors: @user.errors.messages}
         end
     end
 
     def login
+        @user = User.find_by(username: params[:username])
         
+        if @user && @user.authenticate(params[:password])
+            @token = JWT.encode({user_id: @user.id}, Rails.application.secrets.secret_key_base[0])
+            render json: {user: @user, token: @token}
+        else
+            render json: { errors: "Invalid username or password, please try again!" }
+        end
     end
 
     def update
