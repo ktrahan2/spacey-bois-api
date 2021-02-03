@@ -16,19 +16,4 @@ class ClassTypesController < ApplicationController
 
     end
 
-    def create
-
-        @classType = ClassType.new(
-            name: params[:name],
-            description: params[:description]
-        )
-
-        if @classType.valid?
-            @classType.save
-            render json: `Successfully created #{@classType}.`
-        else
-            render json: { errors: @classType.errors.messages }
-        end
-         
-    end
 end

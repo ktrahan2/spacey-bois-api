@@ -1,14 +1,13 @@
 Rails.application.routes.draw do
   resources :users
-  resources :starting_equipments
-  resources :prompt_options
+  post '/login', to: 'users#login'
+  resources :starting_equipments, only [:index, :show]
+  resources :prompt_options, only [:index, :show]
   resources :prompts, only: [:index]
-  resources :attributes
-  resources :characters
-  resources :class_abilities
-  resources :class_types
-  resources :equipment
   get '/prompts/:prompt_number', to: 'prompts#findByPromptNumber'
-  post "/login", to: 'users#login'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :attributes, only [:index, :show]
+  resources :characters
+  resources :class_abilities, only [:index, :show]
+  resources :class_types, only [:index, :show]
+  resources :equipment, only [:index, :show, :create]
 end

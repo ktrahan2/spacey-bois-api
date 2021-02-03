@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
     skip_before_action :authorized, only: [:create, :login]
-    
+
     def index
         @users = User.all
 
@@ -48,7 +48,6 @@ class UsersController < ApplicationController
 
         render json: { messages: "User terminated!"}
     end
-
 
     private
 
