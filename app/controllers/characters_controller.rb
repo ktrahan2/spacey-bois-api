@@ -2,13 +2,16 @@ class CharactersController < ApplicationController
 
     def index 
         @characters = Character.all
+        
+        render json: @characters
     end
 
     def show 
         @character = Character.find(params[:id])
+
+        render json: @character
     end
 
-    #this is currently not working? wont save
     def create 
         @character = Character.create(character_params)
         
@@ -34,6 +37,6 @@ class CharactersController < ApplicationController
     private
 
     def character_params
-        params.require(:character).permit(:name, :background, :vice, :stress, :level, :experience_tracker, :current_harm, :class_type_id, :user_id)
+        params.require(:character).permit(:name, :background, :vice, :stress, :level, :experience_tracker, :current_harm, :class_type_id, :user_id, :background_id, :vice_id)
     end
 end
