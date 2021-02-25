@@ -11,6 +11,7 @@ class UserSerializer < ActiveModel::Serializer
         level: character.level,
         experience_tracker: character.experience_tracker,
         current_harm: character.current_harm,
+        current_prompt: character.current_prompt,
         class_type: character.class_type,
         background: character.background,
         vice: character.vice 
