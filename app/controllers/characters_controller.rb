@@ -13,6 +13,7 @@ class CharactersController < ApplicationController
     end
 
     def create 
+        
         @character = Character.create(character_params)
         
         render json: @character
@@ -37,6 +38,6 @@ class CharactersController < ApplicationController
     private
 
     def character_params
-        params.require(:character).permit(:name, :stress, :level, :experience_tracker, :current_harm, :class_type_id, :user_id, :background_id, :vice_id)
+        params.require(:character).permit(:name, :stress, :level, :experience_tracker, :current_harm, :class_type_id, :user_id, :background_id, :vice_id, :current_prompt)
     end
 end

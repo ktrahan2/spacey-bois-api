@@ -10,8 +10,8 @@ class UsersController < ApplicationController
 
     def show 
         @user = User.find(params[:id])
-
-        render json: @user, include: '*'
+        
+        render json: @user
     end
 
     def create
@@ -19,7 +19,7 @@ class UsersController < ApplicationController
         if @user.valid?
             @user.save
             @token = JWT.encode({user_id: @user.id}, Rails.application.secrets.secret_key_base[0])
-            render json: {user: @user.id, token: @token}
+            render json: {user: @user, userId: @user.id, token: @token}
         else
             render json: {errors: @user.errors.messages}
         end
@@ -30,7 +30,7 @@ class UsersController < ApplicationController
         
         if @user && @user.authenticate(params[:password])
             @token = JWT.encode({user_id: @user.id}, Rails.application.secrets.secret_key_base[0])
-            render json: {user: @user.id, token: @token}
+            render json: {user: @user, userId: @user.id, token: @token}
         else
             render json: { errors: "Invalid username or password, please try again!" }
         end

@@ -6,6 +6,7 @@ class UserSerializer < ActiveModel::Serializer
     characterInfos = []
     object.characters.each do |character|
       characterInfo = {
+        id: character.id,
         name: character.name,
         stress: character.stress,
         level: character.level,
