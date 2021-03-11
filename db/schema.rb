@@ -10,17 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_25_213735) do
+ActiveRecord::Schema.define(version: 2021_03_11_211818) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "attributes", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
 
   create_table "backgrounds", force: :cascade do |t|
     t.string "title"
@@ -31,11 +24,9 @@ ActiveRecord::Schema.define(version: 2021_02_25_213735) do
 
   create_table "character_attributes", force: :cascade do |t|
     t.bigint "character_id"
-    t.bigint "attribute_id"
     t.integer "current_level"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["attribute_id"], name: "index_character_attributes_on_attribute_id"
     t.index ["character_id"], name: "index_character_attributes_on_character_id"
   end
 
@@ -46,6 +37,13 @@ ActiveRecord::Schema.define(version: 2021_02_25_213735) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["character_id"], name: "index_character_heritages_on_character_id"
     t.index ["heritage_id"], name: "index_character_heritages_on_heritage_id"
+  end
+
+  create_table "character_skills", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "characters", force: :cascade do |t|

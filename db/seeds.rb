@@ -427,56 +427,56 @@
 #         image: "coming soon",
 #     )
 
-# # attributes
+# # character skills
 
-#     Attribute.create(
-#         name: "attune",
-#         description: "attune to the Way to communicate with non-sentient species or robots; sense unseen danger or killing intent; safely handle Precursor artifacts or remnants",
-#     )
-#     Attribute.create(
-#         name: "command",
-#         description: "command obedience with your force of personality; intimidate or threaten; lead an action with NPCs; order people to do what you want",
-#     )
-#     Attribute.create(
-#         name: "consort",
-#         description: "consort with connections from your heritage, background, friends, or rivals to gain access to resources, information, people, or places",
-#     )
-#     Attribute.create(
-#         name: "doctor",
-#         description: "doctor someone who’s been injured; handle and identify substances; do science; comfort, support, or elicit sympathy",
-#     )
-#     Attribute.create(
-#         name: "hack",
-#         description: "hack computers, systems, and digital locks; reprogram robots or drones; jam surveillance and communications",
-#     )
-#     Attribute.create(
-#         name: "helm",
-#         description: "helm a vehicle; fire ship weaponry; plot a jump or in-system course; escape a chasing ship",
-#     )
-#     Attribute.create(
-#         name: "rig",
-#         description: "rig together mechanical solutions; disable, modify, repair, or create mechanisms; disable a trap, pick a lock, or crack a safe; rig explosives",
-#     )
-#     Attribute.create(
-#         name: "scramble",
-#         description: "scramble to a position or away from danger; lift, run, climb, jump, or swim; traverse harsh environments",
-#     )
-#     Attribute.create(
-#         name: "scrap",
-#         description: "scrap with an opponent in blaster or physical combat; assault or hold a position; brawl, fight with melee weapons, or wrestle",
-#     )
-#     Attribute.create(
-#         name: "skulk",
-#         description: "skulk about unseen; pick pockets; employ subtle misdirection or sleight of hand",
-#     )
-#     Attribute.create(
-#         name: "study",
-#         description: "study a person, document, or item with close scrutiny to gather information and apply knowledge; gain a deeper understanding; do research",
-#     )
-#     Attribute.create(
-#         name: "sway",
-#         description: "sway someone with charm, logic, decption, disguise, or bluffing; change atitudes or behavior with manipulation or seduction.",
-#     )
+    CharacterSkill.create(
+        name: "attune",
+        description: "attune to the Way to communicate with non-sentient species or robots; sense unseen danger or killing intent; safely handle Precursor artifacts or remnants",
+    )
+    CharacterSkill.create(
+        name: "command",
+        description: "command obedience with your force of personality; intimidate or threaten; lead an action with NPCs; order people to do what you want",
+    )
+    CharacterSkill.create(
+        name: "consort",
+        description: "consort with connections from your heritage, background, friends, or rivals to gain access to resources, information, people, or places",
+    )
+    CharacterSkill.create(
+        name: "doctor",
+        description: "doctor someone who’s been injured; handle and identify substances; do science; comfort, support, or elicit sympathy",
+    )
+    CharacterSkill.create(
+        name: "hack",
+        description: "hack computers, systems, and digital locks; reprogram robots or drones; jam surveillance and communications",
+    )
+    CharacterSkill.create(
+        name: "helm",
+        description: "helm a vehicle; fire ship weaponry; plot a jump or in-system course; escape a chasing ship",
+    )
+    CharacterSkill.create(
+        name: "rig",
+        description: "rig together mechanical solutions; disable, modify, repair, or create mechanisms; disable a trap, pick a lock, or crack a safe; rig explosives",
+    )
+    CharacterSkill.create(
+        name: "scramble",
+        description: "scramble to a position or away from danger; lift, run, climb, jump, or swim; traverse harsh environments",
+    )
+    CharacterSkill.create(
+        name: "scrap",
+        description: "scrap with an opponent in blaster or physical combat; assault or hold a position; brawl, fight with melee weapons, or wrestle",
+    )
+    CharacterSkill.create(
+        name: "skulk",
+        description: "skulk about unseen; pick pockets; employ subtle misdirection or sleight of hand",
+    )
+    CharacterSkill.create(
+        name: "study",
+        description: "study a person, document, or item with close scrutiny to gather information and apply knowledge; gain a deeper understanding; do research",
+    )
+    CharacterSkill.create(
+        name: "sway",
+        description: "sway someone with charm, logic, decption, disguise, or bluffing; change atitudes or behavior with manipulation or seduction.",
+    )
 
 # heritages
     # Heritage.create(
@@ -558,38 +558,38 @@
     # )
 
 #vices
-    Vice.create(
-        title: "Faith",
-        description: "You’re part of a Cult, or observe specific ceremonies at
-        regular intervals."
-    )
-    Vice.create(
-        title: "Gambling",
-        description: "You crave games of chance, or bet on sporting events,
-        etc."
-    )
-    Vice.create(
-        title: "Luxury",
-        description: "You seek the high life with expensive, ostentatious displays
-        of wealth."
-    )
-    Vice.create(
-        title: "Obligation",
-        description: "You’re devoted to a family, cause, organization, charity,
-        etc."
-    )
-    Vice.create(
-        title: "Pleasure",
-        description: "You seek hedonistic gratification from lovers, food,
-        drink, drugs, art, etc."
-    )
-    Vice.create(
-        title: "Stupor",
-        description: "You dull the senses with drug abuse, excessive drinking,
-        fighting to exhaustion, etc"
-    )
-    Vice.create(
-        title: "Weird",
-        description: "You perform strange experiments, explore the Way,
-        commune with Ur artifacts, and so on."
-    )
+    # Vice.create(
+    #     title: "Faith",
+    #     description: "You’re part of a Cult, or observe specific ceremonies at
+    #     regular intervals."
+    # )
+    # Vice.create(
+    #     title: "Gambling",
+    #     description: "You crave games of chance, or bet on sporting events,
+    #     etc."
+    # )
+    # Vice.create(
+    #     title: "Luxury",
+    #     description: "You seek the high life with expensive, ostentatious displays
+    #     of wealth."
+    # )
+    # Vice.create(
+    #     title: "Obligation",
+    #     description: "You’re devoted to a family, cause, organization, charity,
+    #     etc."
+    # )
+    # Vice.create(
+    #     title: "Pleasure",
+    #     description: "You seek hedonistic gratification from lovers, food,
+    #     drink, drugs, art, etc."
+    # )
+    # Vice.create(
+    #     title: "Stupor",
+    #     description: "You dull the senses with drug abuse, excessive drinking,
+    #     fighting to exhaustion, etc"
+    # )
+    # Vice.create(
+    #     title: "Weird",
+    #     description: "You perform strange experiments, explore the Way,
+    #     commune with Ur artifacts, and so on."
+    # )

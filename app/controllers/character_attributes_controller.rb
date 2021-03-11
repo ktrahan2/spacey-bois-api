@@ -15,6 +15,8 @@ class CharacterAttributesController < ApplicationController
     def create 
         @character_attribute = CharacterAttribute.create(character_attribute_params)
 
+        render json: @character_attribute
+    end
     #returns all attributes of a single character
     # def allCharacterAttributes
     #     @characters_attributes = CharacterAttribute.select_all()

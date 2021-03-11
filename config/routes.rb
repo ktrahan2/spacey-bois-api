@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :character_skills
   resources :character_attributes
   resources :vices, only: [:index, :show, :create]
   resources :backgrounds, only: [:index, :show, :create]
@@ -10,7 +11,6 @@ Rails.application.routes.draw do
   resources :prompt_options, only: [:index, :show]
   resources :prompts, only: [:index]
   get '/prompts/:prompt_number', to: 'prompts#findByPromptNumber'
-  resources :attributes, only: [:index, :show]
   resources :characters
   resources :class_abilities, only: [:index, :show]
   resources :class_types, only: [:index, :show]

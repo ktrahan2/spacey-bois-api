@@ -1,4 +1,4 @@
 class CharacterAttribute < ApplicationRecord
     belongs_to :character
-    belongs_to :attribute
+    belongs_to :character_skill
 end
