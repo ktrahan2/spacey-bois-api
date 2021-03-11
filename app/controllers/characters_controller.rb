@@ -8,7 +8,7 @@ class CharactersController < ApplicationController
 
     def show 
         @character = Character.find(params[:id])
-        byebug
+        
         render json: @character
     end
 
